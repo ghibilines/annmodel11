@@ -1,7 +1,10 @@
+#ifndef MODEL11_H
+#define MODEL11_H
+
 #include <iostream>
-#include <array>
 #include <stdio.h>
 #include <math.h>
+
 struct node     {
         node *lefttop;
         node *leftlow;
@@ -22,11 +25,11 @@ struct node     {
         void applylow() {
                 valuelow = leftlow->value*weightlow;
         }
-        void correcttop(double b, double c) {
-                weighttop -= 0.01*((b-c)/(c))*(valuetop/valuelow)*(weighttop/fabs(weighttop));
+        void correcttop(node b, double c) {
+                weighttop -= 0.01*((b.value-c)/(c))*(valuetop/valuelow)*(weighttop/fabs(weighttop));
         }
-        void correctlow(double b, double c) {
-                weightlow -= 0.01*((b-c)/(c))*(valuelow/valuetop)*(weightlow/fabs(weightlow));
+        void correctlow(node b, double c) {
+                weightlow -= 0.01*((b.value-c)/(c))*(valuelow/valuetop)*(weightlow/fabs(weightlow));
         }
         void assigninit(double a)       {
                 weighttop = a;
@@ -46,3 +49,5 @@ void printmodel(node *p, int a)
 
 
 }
+
+#endif
