@@ -11,4 +11,4 @@ the files in the repository
 
 -model112.cpp implements new functions from model11.h
 
--model11.h    contains the struct for node, will contains functions for connecting nodes and setting and correcting internal weights
+-model11.h    contains the struct for node, contains functions for connecting nodes and setting and correcting internal weights
