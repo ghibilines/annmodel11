@@ -9,6 +9,8 @@ the files in the repository
 
 -model11.cpp  a proof of concept example model creation, training and correction
 
--model1121.cpp implements functions from model11.h
+-model1122.cpp implements functions from model11.h
+
+-iris.cpp catagorises flowers
 
 -model11.h    contains the struct for node, contains functions for connecting nodes and setting and correcting internal weights
