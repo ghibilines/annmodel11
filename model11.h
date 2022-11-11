@@ -53,6 +53,9 @@ struct node     {
 void printmodel(node *p, int a);
 void runmodel(node *p, int a, int operand);
 void correctonce(node *p,node *ex, double expect, int a, int loop);
+int roundn(double a);
+void predictmodel(node *ex, int entry, double *values, int nodes, int operand);
+
 
 void printmodel(node *p, int a)
 {
@@ -99,4 +102,27 @@ void correctonce(node *p,node *ex, double expect, int a, int loop)
 	}
 	return;
 }
+
+int roundn(double a)
+{
+        int b;
+        if (a-((int) a) >= 0.5) {
+                b = 1;
+        }
+        else    {
+                b = 0;
+        }
+        return ((int) a + b);
+}
+
+void predictmodel(node *ex, int entry, double *values, int nodes, int operand)
+{
+        int i;
+        for(i=0;i<entry;i++)    {
+                (ex+nodes-1-i)->value = *(values+i);
+        }
+        runmodel(ex, nodes-entry-1, operand);
+        return;
+}
+
 #endif
