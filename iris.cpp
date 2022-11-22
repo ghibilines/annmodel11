@@ -76,7 +76,7 @@ main()
 			//run the model to nd6
 			runmodel(&nd[0],6,'+');
 			//correct to nd6
-			correctonce(&nd[0],&nd[0],type[j],6,k);
+			correctonce(&nd[0],&nd[0],type[j],1.0,6,k);
 			if (k==0)       {
 				temp = roundn(nd[0].value);
                                 printf("GUESS:\t%d\t%f,%f,%f,%f\t%f\t%f,%d\t%f margin\n", k,col1[j],col2[j],col3[j],col4[j],type[j],nd[0].value,temp, ((nd[0].value-type[j])/type[j]));
