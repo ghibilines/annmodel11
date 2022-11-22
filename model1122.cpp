@@ -45,7 +45,7 @@ int main()
 			//running model
 			runmodel(&nd[1],2,'+');
 			//correction
-			correctonce(&nd[1],&nd[1],expect,1,2,j);
+			correctonce(&nd[1],&nd[1],expect,1.0,2,j);
 			//print initial guess
 			if (j==0)	{
 				printf("GUESS:\t%d\t%f,%f\t%f\t%f\t%f margin\n", j,arr0[i],arr1[i], expect, nd[1].value, ((nd[1].value-expect)/expect));
